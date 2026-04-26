@@ -16,8 +16,8 @@ public class Main {
             System.out.println("5. Ganti Struktur Data");
             System.out.println("6. Text Editor (Undo/Redo)");
             System.out.println("7. Benchmark Timer");
-            System.out.println("`8. Keluar");
-            System.out.print("Pilih menu (1-7): ");
+            System.out.println("8. Keluar");
+            System.out.print("Pilih menu (1-8): ");
             pilihan = scanner.nextInt();
 
             switch (pilihan) {
