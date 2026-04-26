@@ -1,5 +1,3 @@
-package Main;
-
 public class Benchmark {
 
     static final int N = 100000;
