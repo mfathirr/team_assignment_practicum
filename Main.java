@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Object daftarMahasiswa = pilihStrukturData(scanner);
+        TextEditor editor = new TextEditor();
         int pilihan;
 
         do {
@@ -13,8 +14,9 @@ public class Main {
             System.out.println("3. Update Nilai Mahasiswa");
             System.out.println("4. Tampilkan Daftar Mahasiswa");
             System.out.println("5. Ganti Struktur Data");
-            System.out.println("6. Keluar");
-            System.out.print("Pilih menu (1-6): ");
+            System.out.println("6. Text Editor (Undo/Redo)");
+            System.out.println("7. Keluar");
+            System.out.print("Pilih menu (1-7): ");
             pilihan = scanner.nextInt();
 
             switch (pilihan) {
@@ -68,6 +70,48 @@ public class Main {
                     break;
 
                 case 6:
+                    int pilihanEditor;
+                    do {
+                        System.out.println("\n=== TEXT EDITOR ===");
+                        System.out.println("1. Tambah Teks");
+                        System.out.println("2. Undo");
+                        System.out.println("3. Redo");
+                        System.out.println("4. Tampilkan Teks");
+                        System.out.println("5. Kembali");
+                        System.out.print("Pilih: ");
+                        pilihanEditor = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch (pilihanEditor) {
+                            case 1:
+                                System.out.print("Masukkan teks: ");
+                                String teks = scanner.nextLine();
+                                editor.tambahTeks(teks);
+                                break;
+
+                            case 2:
+                                editor.undo();
+                                break;
+
+                            case 3:
+                                editor.redo();
+                                break;
+
+                            case 4:
+                                editor.tampilkan();
+                                break;
+
+                            case 5:
+                                System.out.println("Kembali ke menu utama");
+                                break;
+
+                            default:
+                                System.out.println("Pilihan tidak valid");
+                        }
+                    } while (pilihanEditor != 5);
+                    break;
+
+                case 7:
                     System.out.println("Sistem selesai");
                     break;
 
